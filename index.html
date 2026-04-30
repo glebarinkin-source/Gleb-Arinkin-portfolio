@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GLEB ARINKIN — Heritage Archive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #2b2f23; 
+      --cream: #f2e8cf; 
+      --indigo: #3a4d63; 
+      --accent: #c8b89a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Исправление фона */
+    html, body {
+      background-color: var(--bg) !important;
+      color: var(--cream);
+      font-family: 'Space Mono', monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Зернистость */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+      opacity: 0.4;
+    }
+
+    .container { padding: 40px 20px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+
+    header { display: flex; justify-content: space-between; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; padding: 20px 0; border-bottom: 1px solid var(--indigo); }
+
+    .section-about { padding: 80px 0; }
+    .name-title { font-family: 'Inter'; font-size: clamp(3rem, 10vw, 8rem); line-height: 0.8; text-transform: uppercase; margin-bottom: 40px; }
+    .about-text { font-size: 1.1rem; line-height: 1.6; color: var(--accent); max-width: 700px; }
+
+    /* Исправленный текст на фото */
+    .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+    .work-item { position: relative; border: 1px solid var(--indigo); overflow: hidden; background: #000; }
+    .work-item img { width: 100%; display: block; filter: contrast(1.1) sepia(10%); opacity: 0.9; }
+    
+    .work-caption { 
+      position: absolute; 
+      bottom: 0; left: 0; right: 0; 
+      padding: 20px; 
+      background: linear-gradient(transparent, rgba(0,0,0,0.9)); /* Плавная темная подложка */
+      color: var(--cream);
+    }
+    .work-caption h3 { font-family: 'Inter'; text-transform: uppercase; font-size: 1.2rem; margin-bottom: 5px; }
+    .work-caption p { font-size: 0.7rem; opacity: 0.9; line-height: 1.4; }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 40px; }
+    .gallery-grid img { width: 100%; border: 1px solid rgba(255,255,255,0.05); display: block; }
+
+    footer { padding: 100px 0 40px; border-top: 1px solid var(--indigo); margin-top: 60px; }
+    .cta { font-family: 'Inter'; font-size: clamp(2rem, 8vw, 6rem); text-decoration: none; color: var(--cream); display: block; margin-bottom: 40px; line-height: 0.8; }
+    .social-links { display: flex; gap: 30px; }
+    .social-links a { color: var(--cream); text-decoration: none; border-bottom: 1px solid var(--indigo); font-size: 0.8rem; text-transform: uppercase; padding-bottom: 4px; }
+
+    @media (max-width: 768px) { .work-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div>Gleb Arinkin</div>
+    <div>Prague / Moscow</div>
+  </header>
+
+  <section class="section-about">
+    <h1 class="name-title">Gleb<br>Arinkin</h1>
+    <p class="about-text">
+      My name is Gleb Arinkin. My journey in the heritage world is built on years of handling the real thing. 
+      Ex-Clochard 9.2 and DenimHeads Prague. I know the industry from the inside — from the iconic store floors to collaborations with fellow makers.
+    </p>
+  </section>
+
+  <div class="work-grid">
+    <div class="work-item">
+      <img src="IMG_7597.jpeg">
+      <div class="work-caption">
+        <h3>IN THE ATELIER</h3>
+        <p>Collaboration with HighCuff. Fabric selection and silhouette development.</p>
+      </div>
+    </div>
+    <div class="work-item">
+      <img src="IMG_7144.jpeg">
+      <div class="work-caption">
+        <h3>STREET ARCHIVE</h3>
+        <p>Personal styling and creative direction. Archival workwear in urban environment.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="gallery-grid">
+    <img src="IMG_7615.jpeg">
+    <img src="IMG_7287.jpeg">
+    <img src="IMG_7133.jpeg">
+    <img src="IMG_7017.jpeg">
+  </section>
+
+  <footer>
+    <a href="https://t.me/glebarinkin" class="cta">GET IN TOUCH</a>
+    <div class="social-links">
+      <a href="https://t.me/glebarinkin">Telegram</a>
+      <a href="https://instagram.com/gleb.arinkin">Instagram</a>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
